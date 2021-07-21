@@ -37,8 +37,24 @@ engine = create_engine('mysql+pymysql://'+DATABASE_USER+':'+DATABASE_PASSWORD+'@
 
 '''
 specify the table that will be the target data container.
-If you don't have a table, you can skip this step langkah
+If you don't have a table, you can skip this step
 '''
 # Example
 table_name = 'input your table name'
 
+# Load Dataset with method to sql
+dataset.to_sql(
+    table_name,
+    engine,
+    if_exists='append',
+    chunksize=30000,
+    index=False,
+    dtype={
+        "table_name": Integer,
+        "table_name": Text,
+        "table_name": Text,
+        "table_name": Text,
+        "table_name": Text,
+        "tabele_name": DateTime,
+    }
+)
