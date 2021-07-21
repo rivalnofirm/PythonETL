@@ -4,7 +4,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.sql.sqltypes import Date, Float, Integer, Text, DateTime
 
 
-
 # Import your dataset and handle with pandas
 dataset = pd.read_csv('import your file format csv') #example handle data with csv format
 dataset = pd.read_excel('import your file format xlsx') #example handle data with excel format
@@ -27,13 +26,14 @@ DATABASE_HOST_IP 	= '127.0.0.1'   # Input your database host
 DATABASE_PORT		= '3306'        # Input your database port
 DATABASE_NAME	    = 'django'      # Input your database name
 
+
 '''
 To establish a connection, we also must not forget the connector driver for python with the database used
 '''
-
 # example
 engine = create_engine('postgresql+psycopg2://'+DATABASE_USER+':'+DATABASE_PASSWORD+'@'+DATABASE_HOST_IP+':'+DATABASE_PORT+'/'+DATABASE_NAME) # connection to postgresql
 engine = create_engine('mysql+pymysql://'+DATABASE_USER+':'+DATABASE_PASSWORD+'@'+DATABASE_HOST_IP+':'+DATABASE_PORT+'/'+DATABASE_NAME) # connection to mysql
+
 
 '''
 specify the table that will be the target data container.
